@@ -13,14 +13,7 @@ function setup() {
   cols = floor(height/w);
   rows = floor(width/w);
 
-  //Draw entry and exit around
-  strokeWeight(2);
-  stroke("#FFF");
-
-  line(c,1,width-1,1);
-  line(1,w,1,height-1);
-  line(width-1, 1, width-1, height-1);
-  line(width-1, height-1, width-w, height-c);
+  
   noStroke();
   //Create Cells
   for(var i = 0; i < rows; i++) {
