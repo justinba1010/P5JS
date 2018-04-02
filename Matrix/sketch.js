@@ -1,5 +1,5 @@
 var drops = [];
-var numdrops = 5000
+var numdrops = window.innerWidth*10;
 
 //drop
 var heightMin = 5;
@@ -28,6 +28,7 @@ function draw() {
 function rand(x,y) {
   return floor(Math.random()*Math.abs(y-x+1)) + x;
 }
+
 
 function Drop() {
   this.x = rand(0,window.innerWidth);
