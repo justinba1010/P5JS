@@ -1,5 +1,5 @@
 var drops = [];
-var numdrops = window.innerWidth*10;
+var numdrops = window.innerWidth*3;
 
 //drop
 var heightMin = 5;
@@ -51,20 +51,18 @@ function Drop() {
   this.y = rand(-1000,-100);
   this.ySpeed = rand(minSpeed,maxSpeed);
   this.size = rand(6,16);
-  this.letter = char(rand(0,255));
-  this.colors = getColorsSum(30);
+  this.colors = getColorsSum(50);
 
   this.show = function() {
     noStroke();
     fill(this.colors[0],this.colors[1],this.colors[2],this.colors[3]);
     textSize(this.size);
-    text(this.letter,this.x,this.y);
+    text(char(rand(65,126)),this.x,this.y);
   }
   this.fall = function() {
     this.y = this.y + this.ySpeed;
     if(this.y > 1000) {
       this.y = rand(-300,-100);
-      this.letter = char(rand(0,255));
     }
   }
 }

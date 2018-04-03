@@ -9,11 +9,11 @@ var c = 5
 var current;
 
 function setup() {
-  createCanvas(600,600);
+  createCanvas(window.innerWidth,window.innerHeight);
   cols = floor(height/w);
   rows = floor(width/w);
 
-  
+
   noStroke();
   //Create Cells
   for(var i = 0; i < rows; i++) {
@@ -50,7 +50,7 @@ function removeWalls(a,b) {
 
 
 function draw() {
-  background(51);
+  background(0);
   for(var i = 0; i < grid.length; i++) {
     grid[i].show();
   }

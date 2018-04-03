@@ -1,5 +1,5 @@
 var drops = [];
-var numdrops = window.innerWidth*10;
+var numdrops = window.innerWidth*3;
 
 //drop
 var heightMin = 5;
@@ -45,6 +45,8 @@ function Drop() {
   }
   this.fall = function() {
     this.y = this.y + this.ySpeed;
+    this.letter = char(rand(0,255));
+    this.size = rand(6,16);
     if(this.y > 1000) {
       this.y = rand(-300,-100);
     }

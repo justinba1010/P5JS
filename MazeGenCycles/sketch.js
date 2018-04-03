@@ -9,12 +9,12 @@ var c = 5
 var current;
 
 //Cycle generator
-var ring = 53;
+var ring = 127;
 var generator = 3;
 var curgen = 1;
 
 function setup() {
-  createCanvas(1200,1200);
+  createCanvas(400,400);
   cols = floor(height/w);
   rows = floor(width/w);
 

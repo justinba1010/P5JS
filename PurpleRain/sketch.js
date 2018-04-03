@@ -1,6 +1,6 @@
 var drops = [];
 var numdrops = window.innerWidth*10;
-
+  
 //drop
 var heightMin = 5;
 var heightMax = 15;
