@@ -7,7 +7,7 @@ function setup() {
   board = new Board();
   textSize(15);
   frameRate(2);
-  message = "Computer is thinking.";
+  message = "Game 1 Recorded";
 }
 
 
