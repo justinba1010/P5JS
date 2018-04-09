@@ -1,4 +1,3 @@
-//Followed https://www.youtube.com/watch?v=_p5IH0L63wo somewhate loosely
 
 
 function setup() {
