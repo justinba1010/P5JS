@@ -1,6 +1,6 @@
 var offset = 0;
 var decay = 1;
-
+var vectors = [[1,1],[1,-1],[-1,1],[-1,-1],[1,0],[0,1],[-1,0],[0,-1]];
 
 function Ball(x,y,xVector,yVector,radius,colors) {
   this.x = x;
@@ -9,6 +9,11 @@ function Ball(x,y,xVector,yVector,radius,colors) {
   this.yVector = yVector;
   this.colors = colors;
   this.radius = radius;
+
+  this.decay = function(decay) {
+    this.xVector *= decay;
+    this.yVector *= decay;
+  }
 
   this.draw = function() {
     noStroke();
@@ -29,6 +34,7 @@ function Ball(x,y,xVector,yVector,radius,colors) {
   this.hitDetect = function(ball2) {
     dist = Math.pow(this.x - ball2.x,2) + Math.pow(this.y - ball2.y,2);
     dist = Math.floor(Math.pow(dist,0.5));
+    dist += this.radius/3;
 
     if(dist < this.radius + ball2.radius) {
       a = this.xVector;

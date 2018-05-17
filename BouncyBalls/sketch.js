@@ -5,9 +5,14 @@ var offset = 25;
 var vectin = 30;
 var coef = .05;
 var sizeMin = 3;
-var sizeMax = 5;
+var sizeMax = 8;
+
+var decay = 1;
+var decCounter = 0;
+var decRefresh = 50;
+
 //var numballs = Math.floor((window.innerWidth*window.innerHeight)/2/Math.pow((sizeMin+sizeMax)/2,Math.pow(sizeMine,1.5)));
-var numballs = Math.floor(window.innerWidth*window.innerHeight/100/(sizeMin+sizeMax))
+var numballs = Math.floor(window.innerWidth*window.innerHeight/500/(sizeMin+sizeMax))
 
 function setup() {
   createCanvas(w,h);
@@ -22,10 +27,16 @@ function setup() {
 
 
 function draw() {
+  decCounter++;
+  decCounter %= decRefresh;
   background(0);
   for(var i = 0; i < balls.length; i++) {
     balls[i].draw();
     balls[i].update();
+
+    if(decCounter == 0) {
+      balls[i].decay(decay);
+    }
 
     //Hit Detect
     for(var x = i; x < balls.length; x++) {

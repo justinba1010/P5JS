@@ -2,7 +2,7 @@
 
 
 var cols, rows;
-var w = 25;
+var w = 40;
 var grid = [];
 var stack = [];
 var c = 5
@@ -23,7 +23,7 @@ function setup() {
     }//for j
   }//for i
 
-  //frameRate(100);
+  //frameRate(3);
 
   current = grid[0];
 }

@@ -7,7 +7,7 @@ function setup() {
   board = new Board();
   message = "Computer is thinking...";
   textSize(15);
-  frameRate(1);
+  frameRate(.5);
 }
 
 
